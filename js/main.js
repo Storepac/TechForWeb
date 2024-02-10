@@ -366,7 +366,7 @@ $(function () {
     });
 
     if($(window).width() < 1200){
-    $('.mil-navigation ul li.mil-has-children > a').on('click', function () {
+    $('.mil-navigation ul li.  > a').on('click', function () {
 		return false;
 	});
     }
