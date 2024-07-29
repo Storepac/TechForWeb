@@ -125,63 +125,56 @@
                                 <div class="mil-divider-lg mil-up mil-mb-30"></div>
                                 <p class="mil-up mil-mb-30">Interessado em se juntar à equipe?</p>
                                 <div class="mil-up">
-                                    <a href="https://wa.me/5514996145415?text=Quero+me+jntar+a+essa+equipe" target="_blank"  class="mil-link mil-upper">Quero me juntar <span class="mil-arrow"><img src="img/icons/1.svg" alt="arrow"></span></a>
+                                    <a href="https://wa.me/5514996145415?text=Quero+me+juntar+a+essa+equipe" target="_blank"  class="mil-link mil-upper">Quero me juntar <span class="mil-arrow"><img src="img/icons/1.svg" alt="arrow"></span></a>
+                                </div>
+                                <br>
+                                <div class="mil-up">
+                                    <a href="https://wa.me/5514996145415?text=Quero+contratar+um+serviço" target="_blank"  class="mil-link mil-upper">Quero contratar um serviço <span class="mil-arrow"><img src="img/icons/1.svg" alt="arrow"></span></a>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-lg-7">
 
-                            <form id="cform" class="mil-mb-90 cform">
+                            <form id="cform" class="mil-mb-90 cform" action="js/send_email.php" method="post">
                                 <div class="row">
                                     <div class="col-lg-6">
-
                                         <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                             <label class="mil-upper"><span>Nome completo</span><span class="mil-required">*</span></label>
-                                            <input type="text" name="name" placeholder="Coloque seu nome completo">
+                                            <input type="text" name="name" placeholder="Coloque seu nome completo" required>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-6">
-
                                         <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                             <label class="mil-upper"><span>E-mail de contato</span><span class="mil-required">*</span></label>
-                                            <input type="email" name="email" placeholder="Seu e-mail">
+                                            <input type="email" name="email" placeholder="Seu e-mail" required>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-6">
-
                                         <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                             <label class="mil-upper"><span>Telefone</span><span class="mil-required">*</span></label>
-                                            <input type="tel" name="tel" placeholder="Seu telefone de contato">
+                                            <input type="tel" name="tel" placeholder="Seu telefone de contato" required>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-6">
-
                                         <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                             <label class="mil-upper"><span>Assunto</span><span class="mil-required">*</span></label>
-                                            <input type="text" name="budget" placeholder="Qual assunto deseja falar?">
+                                            <input type="text" name="subject" placeholder="Qual assunto deseja falar?" required>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-12">
-
                                         <div class="mil-input-frame mil-dark-input mil-up mil-mb-30">
                                             <label class="mil-upper"><span>Mensagem</span><span class="mil-required">*</span></label>
-                                            <textarea name="message" placeholder="Escreva como quiser"></textarea>
+                                            <textarea name="message" placeholder="Escreva como quiser" required></textarea>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-12">
-
-                                        <a href="#." onclick="$('#cform').submit(); return false;" class="mil-button mil-up">Enviar</a>
-
+                                        <button type="submit" class="mil-button mil-up">Enviar</button>
                                     </div>
                                 </div>
                             </form>
-                            <div class="alert-success mil-mb-90" style="display: none;"><h5>Thanks, your message is sent successfully.</h5></div>
+                            <div class="alert-success mil-mb-90" style="display: none;"><h5>Obrigado, sua mensagem foi enviada com sucesso.</h5></div>
+                            
 
                         </div>
                     </div>
@@ -276,6 +269,27 @@
     <!-- wrapper end -->
 
     <!-- jQuery js -->
+    <script>
+        document.getElementById("cform").addEventListener("submit", function(event){
+            event.preventDefault();
+        
+            var formData = new FormData(this);
+        
+            fetch(this.action, {
+                method: this.method,
+                body: formData,
+            }).then(function(response) {
+                return response.text();
+            }).then(function(text) {
+                var successMessage = document.querySelector(".alert-success");
+                successMessage.style.display = "block";
+                successMessage.innerHTML = "<h5>" + text + "</h5>";
+            }).catch(function(error) {
+                console.error(error);
+            });
+        });
+        </script>
+        
     <script src="js/plugins/jquery.min.js"></script>
     <!-- jQuery Validation js -->
     <script src="js/plugins/jquery.validate.min.js"></script>
