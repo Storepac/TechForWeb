@@ -68,6 +68,63 @@
     <title>Método Clonagem Zero</title>
 
     <style>
+        /* Container da imagem centralizado e maior */
+        .img_book {
+            display: flex; /* Habilita o Flexbox */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            width: 100%; /* Ocupa 100% do espaço disponível */
+            max-width: 700px; /* Aumenta o tamanho máximo para telas grandes */
+            height: 100%; /* Ocupa toda a altura do contêiner */
+            margin: auto;
+            padding: 20px; /* Espaçamento opcional */
+        }
+
+        /* Imagem adaptável e grande */
+        .img_book img {
+            width: 100%; /* Ajusta para ocupar o contêiner completamente */
+            height: auto; /* Mantém a proporção da imagem */
+            max-height: 800px; /* Aumenta o limite de altura */
+            object-fit: contain; /* Evita distorção */
+        }
+
+        /* Ajustes para telas médias */
+        @media (max-width: 992px) {
+            .img_book {
+                max-width: 800px; /* Tamanho máximo ajustado para telas médias */
+                max-height: 500px;
+            }
+            .img_book img {
+                max-height: 500px;
+            }
+        }
+
+        /* Ajustes para telas pequenas */
+        @media (max-width: 768px) {
+            .img_book {
+                max-width: 500px;
+                max-height: 400px;
+            }
+            .img_book img {
+                max-height: 400px;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 576px) {
+            .img_book {
+                max-width: 400px;
+                max-height: 350px;
+            }
+            .img_book img {
+                max-height: 350px;
+            }
+        }
+
+        ul li{
+            font-size: 1.2rem;
+        }
+
         .timer {
             align-items: center;
             text-align: center;
@@ -197,16 +254,20 @@
                             <div class="color-cont" id="ten-countdown"></div>
                         </div>
                     </div>
-                    <div class="row justify-content-between">
+                    <div class="row justify-content-center">
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-7 col-md-12 d-flex justify-content-center h-100">
+                            <div class="mil-mb-10 img_book">
+                                <img src="img/photo/metodo.png" alt="Imagem do Método Clonagem ZERO">
+                            </div>
+                        </div>
+                        
+                        <div class="col col-lg-5 mil-mt-suptitle-offset">
                             <div class="mil-mb-10">
                                 <span class="mil-suptitle mil-upper mil-up mil-mb-30">eBook </span>
                                 <h2 class="mil-upper mil-up mil-mb-30">Método Clonagem <span class="mil-marker">ZERO</span> </h2>
-                                <h4>O segredo de como proteger o seu WhatsApp</h4>
+                                <h4>O segredo de como proteger o seu WhatsApp de ser <span class="mil-marker">clonado</span></h4>
                             </div>
-                        </div>
-                        <div class="col-lg-7 mil-mt-suptitle-offset">
                             <p class="mil-up  text-center" style="font-size: 1.4rem;">Descubra como proteger seu celular contra clonagem e espionagem.
                                 Em um mundo cada vez mais digital, a segurança do seu celular nunca foi tão importante. 
                                 <br>
@@ -222,10 +283,6 @@
                 </div>
             </section>
             <!-- description end -->
-
-            <div class="container">
-                <div class="mil-divider-lg"></div>
-            </div>
 
 
             <!-- services -->
@@ -384,12 +441,15 @@
                                                             
                         </div>
                         <div class="col-lg-12 mil-mt-suptitle-offset text-center">
-                            <p class="mil-up"><h3 class="mil-center"> Não Espere Até Ser Tarde Demais!</h3> <br>
+                            <p class="mil-up">
+                                <h3 class="mil-center"> Não Espere Até Ser Tarde Demais!</h3> <br>
                                
                                 Cada minuto conta quando se trata de proteger seus dados. Adquira nosso eBook agora e tome o controle da sua segurança digital! Não deixe que hackers tenham acesso à sua vida. Garanta a proteção que você e sua família merecem.
-                                                            
+                                <br>
+                            </p>    
                         </div>
-                        <br>
+                        <br>  
+
                         <div class="col-lg-12">
 
                             <a href="https://pay.kirvano.com/e8b992bb-1ea9-4662-a79a-9ebb37731133" class="mil-service-card mil-up ">
@@ -417,7 +477,7 @@
                         </div>
                         <br>
                         <div class="col-lg-12 mil-mt-suptitle-offset text-center">
-                            <p class="mil-up"><h2 class="mil-center">  Não deixe sua segurança em segundo plano! </h2> <br>
+                            <p class="mil-up"><h2 class="mil-center">  Não deixe sua <span class="mil-marker2">Segurança</span> em segundo plano! </h2> <br>
                                
                                Cada minuto que você espera é uma oportunidade para hackers atacarem seu celular e comprometerem suas informações mais valiosas. Com nosso eBook, você ganhará o conhecimento essencial para se proteger contra ameaças digitais e manter seus dados seguros. Não corra riscos desnecessários – garanta já sua cópia e defenda sua privacidade hoje mesmo! Aproveite nossa oferta especial e tome o controle da sua segurança digital!
 
