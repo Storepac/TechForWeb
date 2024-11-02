@@ -390,7 +390,27 @@
                         </div>
                         <div class="col-lg-12">
 
+                        
+
                             <a href="https://pay.kirvano.com/e8b992bb-1ea9-4662-a79a-9ebb37731133" class="mil-service-card mil-up ">
+                                                        <!-- Google tag (gtag.js) event - delayed navigation helper -->
+                        <script>
+                            // Helper function to delay opening a URL until a gtag event is sent.
+                            // Call it in response to an action that should navigate to a URL.
+                            function gtagSendEvent(url) {
+                            var callback = function () {
+                                if (typeof url === 'string') {
+                                window.location = url;
+                                }
+                            };
+                            gtag('event', 'conversion_event_add_to_cart', {
+                                'event_callback': callback,
+                                'event_timeout': 2000,
+                                // <event_parameters>
+                            });
+                            return false;
+                            }
+                        </script>
                                 <div class="mil-center">
                                     <div class="mil-icon mil-icon-lg mil-mb-30">
                                         <img src="img/icons/5.svg" alt="icon">
