@@ -1,0 +1,254 @@
+/* Otimizações de Performance e Acessibilidade - Tech For Web */
+
+/* Lazy Loading - Imagens com carregamento suave */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+    background-size: 400% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+img.lazy.loaded {
+    opacity: 1;
+}
+
+@keyframes loading {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Melhorias de Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Melhorias de Performance - Reduzir layout shift */
+.mil-portfolio-item img,
+.mil-bg-img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.mil-portfolio-item.mil-square-item img {
+    aspect-ratio: 1 / 1;
+}
+
+.mil-portfolio-item.mil-long-item img {
+    aspect-ratio: 4 / 3;
+}
+
+/* Otimização de fonts - Evitar FOIT */
+@font-face {
+    font-family: 'Sora';
+    font-display: swap;
+}
+
+/* Melhorias de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduzir animações para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Melhorias para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    /* Otimizar tap targets */
+    .mil-button,
+    .mil-link,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Melhorar legibilidade em mobile */
+    p, li {
+        line-height: 1.6;
+    }
+    
+    /* Reduzir animações pesadas em mobile */
+    .mil-scale,
+    .mil-parallax {
+        transform: none !important;
+    }
+}
+
+/* Dark mode suporte */
+@media (prefers-color-scheme: dark) {
+    .mil-bg-img {
+        filter: brightness(0.8);
+    }
+}
+
+/* Melhorias de contraste */
+.mil-light-soft {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mil-text-contrast {
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Otimização de Grid Layout */
+.mil-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+/* Print styles */
+@media print {
+    .mil-menu-btn,
+    .mil-navigation,
+    .mil-top-panel-buttons,
+    footer {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000;
+        background: #fff;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* Melhorias de SEO - Structured data visual */
+.breadcrumb-schema {
+    display: none;
+}
+
+/* Loading states melhorados */
+.mil-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Melhorias no footer */
+footer .mil-footer-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .mil-footer-navigation li {
+    list-style: none;
+}
+
+/* Correções de tipografia */
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Otimização de imagens de fundo */
+.mil-bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+/* Melhorias no formulário de contato */
+.mil-input-frame {
+    position: relative;
+}
+
+.mil-input-frame input:valid,
+.mil-input-frame textarea:valid {
+    border-color: #28a745;
+}
+
+.mil-input-frame input:invalid,
+.mil-input-frame textarea:invalid {
+    border-color: #dc3545;
+}
+
+/* Indicador de erro/sucesso */
+.form-feedback {
+    display: none;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+}
+
+.form-feedback.valid {
+    color: #28a745;
+    display: block;
+}
+
+.form-feedback.invalid {
+    color: #dc3545;
+    display: block;
+}
+
+/* Melhorias de acessibilidade para o menu mobile */
+.mil-menu-btn[aria-expanded="true"] + .mil-navigation {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Skip links para navegação por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+} 
