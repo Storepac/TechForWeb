@@ -9,7 +9,7 @@ const plans = [
   {
     name: "Start",
     price: 39.9,
-    products: 1000,
+    products: 700,
     photos: 2,
     popular: false,
     description: "Ideal para começar",
@@ -19,7 +19,7 @@ const plans = [
   {
     name: "Pro",
     price: 79.9,
-    products: 1500,
+    products: 1200,
     photos: 3,
     popular: true,
     description: "Mais vendido",
