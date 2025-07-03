@@ -117,12 +117,12 @@ export function Products({ onShowTechLoja }: ProductsProps) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 w-[95%] mx-auto">
           {products.map((product, index) => (
             <Card
               key={index}
-              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden ${
-                product.popular ? "ring-2 ring-blue-500 scale-105" : ""
+              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-visible ${
+                product.popular ? "ring-2 ring-blue-500 scale-105 pt-8" : ""
               }`}
             >
               {product.popular && (
@@ -134,7 +134,7 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                 </div>
               )}
 
-              <CardContent className="p-8 space-y-6">
+              <CardContent className="p-2 space-y-6">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-4">
                     <div className={`w-16 h-16 ${product.color} rounded-xl flex items-center justify-center`}>

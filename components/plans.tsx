@@ -142,6 +142,22 @@ export function Plans() {
           ))}
         </div>
 
+        {/* Section do protótipo */}
+        <section className="py-12 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+          <div className="container mx-auto px-4 text-center max-w-2xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Veja um exemplo real de loja criada com nosso sistema!</h2>
+            <p className="text-lg text-gray-700 mb-6">Confira um protótipo de loja virtual moderna, responsiva e pronta para vender, desenvolvida com a tecnologia TechForWeb.</p>
+            <a
+              href="https://model-bellastore-app.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow transition-colors text-lg"
+            >
+              Visualizar Protótipo
+            </a>
+          </div>
+        </section>
+
         <Card className="bg-gradient-to-r from-gray-50 to-blue-50 shadow-xl border border-blue-100">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-center text-gray-900">
