@@ -88,10 +88,10 @@ export function Plans() {
               className={`relative ${plan.popular ? "ring-2 ring-blue-600 shadow-2xl scale-105" : "shadow-lg border-gray-200"}`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-blue-600 text-white px-4 py-1 flex items-center space-x-1 shadow-lg">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                  <Badge className="bg-blue-600 text-white px-2 py-1 sm:px-4 sm:py-1 flex items-center space-x-1 shadow-lg whitespace-nowrap">
                     <Crown className="w-3 h-3" />
-                    <span>{plan.description}</span>
+                    <span className="text-xs sm:text-sm">{plan.description}</span>
                   </Badge>
                 </div>
               )}

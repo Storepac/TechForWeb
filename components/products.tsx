@@ -126,10 +126,10 @@ export function Products({ onShowTechLoja }: ProductsProps) {
               }`}
             >
               {product.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                  <Badge className="bg-blue-600 text-white px-4 py-1 flex items-center space-x-1">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                  <Badge className="bg-blue-600 text-white px-2 py-1 sm:px-4 sm:py-1 flex items-center space-x-1 shadow-lg whitespace-nowrap">
                     <Star className="w-3 h-3" />
-                    <span>Mais Popular</span>
+                    <span className="text-xs sm:text-sm">Mais Popular</span>
                   </Badge>
                 </div>
               )}
@@ -178,7 +178,12 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                   {product.hasDetailPage ? (
                     <Button
                       className={`flex-1 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
-                      onClick={() => onShowTechLoja?.()}
+                      onClick={() => {
+                        onShowTechLoja?.()
+                        setTimeout(() => {
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }, 100)
+                      }}
                     >
                       Ver Detalhes
                       <ArrowRight className="w-4 h-4 ml-2" />

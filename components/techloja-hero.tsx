@@ -132,7 +132,7 @@ export function Hero({ onBackToHome }: TechLojaHeroProps) {
             </div>
 
             {/* Floating dots */}
-            <div className="absolute -top-4 -right-4 bg-green-500 text-white rounded-full p-2">
+            <div className="absolute -top-4 -right-4 bg-green-500 text-white rounded-full p-2 z-10">
               <CheckCircle className="h-4 w-4" />
             </div>
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-blue-100 rounded-full opacity-20" />
