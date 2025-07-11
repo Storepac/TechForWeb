@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github, ArrowRight } from "lucide-react"
 
 const projects = [
   {
@@ -9,7 +9,7 @@ const projects = [
     description: "Plataforma completa de e-commerce sem comissões para lojas virtuais profissionais.",
     image: "/placeholder.svg?height=300&width=400",
     tags: ["React", "Next.js", "E-commerce", "WhatsApp"],
-    link: "/techloja",
+    link: "/servicos/tech-loja",
     github: "#",
     category: "E-commerce",
   },
@@ -121,8 +121,16 @@ export function Portfolio() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
+            onClick={() => {
+              window.location.href = "/projetos";
+            }}
+          >
             Ver Todos os Projetos
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>

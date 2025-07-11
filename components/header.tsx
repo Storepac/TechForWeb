@@ -70,13 +70,31 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               Produtos
             </button>
             <button
-              onClick={() => scrollToSection("servicos")}
+              onClick={() => {
+                if (currentPage !== "home") {
+                  onNavigate?.("home");
+                  setTimeout(() => {
+                    window.location.href = "/servicos";
+                  }, 100);
+                } else {
+                  window.location.href = "/servicos";
+                }
+              }}
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
             >
               Serviços
             </button>
             <button
-              onClick={() => scrollToSection("portfolio")}
+              onClick={() => {
+                if (currentPage !== "home") {
+                  onNavigate?.("home");
+                  setTimeout(() => {
+                    window.location.href = "/projetos";
+                  }, 100);
+                } else {
+                  window.location.href = "/projetos";
+                }
+              }}
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
             >
               Portfólio
@@ -129,13 +147,33 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
                 Produtos
               </button>
               <button
-                onClick={() => scrollToSection("servicos")}
+                onClick={() => {
+                  if (currentPage !== "home") {
+                    onNavigate?.("home");
+                    setTimeout(() => {
+                      window.location.href = "/servicos";
+                    }, 100);
+                  } else {
+                    window.location.href = "/servicos";
+                  }
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
               >
                 Serviços
               </button>
               <button
-                onClick={() => scrollToSection("portfolio")}
+                onClick={() => {
+                  if (currentPage !== "home") {
+                    onNavigate?.("home");
+                    setTimeout(() => {
+                      window.location.href = "/projetos";
+                    }, 100);
+                  } else {
+                    window.location.href = "/projetos";
+                  }
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
               >
                 Portfólio

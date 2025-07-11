@@ -20,6 +20,14 @@
   .font-poppins {
     font-family: var(--font-poppins);
   }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Smooth scrolling */

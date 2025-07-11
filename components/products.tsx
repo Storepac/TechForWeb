@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Star,
   CheckCircle,
+  Settings,
 } from "lucide-react"
 
 interface ProductsProps {
@@ -35,58 +36,36 @@ const products = [
       setup: "Ver na página",
       monthly: "Confira os planos",
     },
-    link: "/techloja",
+    link: "/servicos/tech-loja",
     popular: true,
     color: "bg-blue-100 text-blue-600",
     gradient: "from-blue-500 to-blue-700",
     hasDetailPage: true,
   },
   {
-    name: "Gestor de Tráfego",
+    name: "Viveiro Platform",
     version: "v1.0",
-    description: "Serviço completo de gestão de tráfego pago para maximizar seus resultados digitais.",
-    icon: BarChart3,
+    description: "Sistema completo para administração de viveiros, controle de estoque, vendas e relatórios.",
+    icon: Settings,
     features: [
-      "Gestão Google Ads",
-      "Facebook/Instagram Ads",
-      "Otimização de campanhas",
-      "Relatórios detalhados",
-      "ROI maximizado",
+      "Gestão de produtos",
+      "Controle de estoque",
+      "Relatórios avançados",
+      "Dashboard intuitivo",
+      "Design responsivo",
     ],
     pricing: {
       setup: "Sob consulta",
-      monthly: "Investimento personalizado",
+      monthly: "Projeto personalizado",
     },
-    link: "#",
+    link: "/servicos/viveiro-plataform",
     popular: false,
     color: "bg-green-100 text-green-600",
     gradient: "from-green-500 to-green-700",
-    hasDetailPage: false,
+    hasDetailPage: true,
   },
   {
-    name: "Criação de Mídia",
-    version: "v1.0",
-    description: "Serviço especializado em criação de conteúdo visual para redes sociais e marketing digital.",
-    icon: Store,
-    features: [
-      "Posts para redes sociais",
-      "Stories criativos",
-      "Banners promocionais",
-      "Identidade visual",
-      "Conteúdo estratégico",
-    ],
-    pricing: {
-      setup: "Sob consulta",
-      monthly: "Pacotes personalizados",
-    },
-    link: "#",
-    popular: false,
-    color: "bg-purple-100 text-purple-600",
-    gradient: "from-purple-500 to-purple-700",
-    hasDetailPage: false,
-  },
-  {
-    name: "Criação de Sites",
+    name: "Sites Institucionais",
     version: "v2.0",
     description: "Desenvolvimento completo de sites institucionais, landing pages, blogs e portais corporativos.",
     icon: Catalog,
@@ -111,9 +90,9 @@ export function Products({ onShowTechLoja }: ProductsProps) {
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             🚀 Nossos Produtos
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Soluções digitais prontas para usar</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Nossos campeões de vendas</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Produtos desenvolvidos pela TechForWeb para acelerar sua transformação digital com tecnologia de ponta.
+            Produtos mais solicitados desenvolvidos pela TechForWeb para acelerar sua transformação digital com tecnologia de ponta.
           </p>
         </div>
 
@@ -179,10 +158,7 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                     <Button
                       className={`flex-1 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
                       onClick={() => {
-                        onShowTechLoja?.()
-                        setTimeout(() => {
-                          window.scrollTo({ top: 0, behavior: 'smooth' })
-                        }, 100)
+                        window.location.href = "/servicos/tech-loja"
                       }}
                     >
                       Ver Detalhes

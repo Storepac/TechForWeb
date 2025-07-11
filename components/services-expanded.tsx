@@ -13,6 +13,7 @@ import {
   Users,
   BarChart3,
   MessageCircle,
+  ArrowRight,
 } from "lucide-react"
 
 const services = [
@@ -154,65 +155,50 @@ export function ServicesExpanded() {
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             🛠️ Nossos Serviços
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Soluções completas para seu negócio digital</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Soluções digitais completas</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Oferecemos uma gama completa de serviços de desenvolvimento web e transformação digital.
+            Oferecemos uma gama completa de serviços de desenvolvimento web, desde sites institucionais até sistemas complexos, 
+            sempre com foco na qualidade e resultados para seu negócio.
           </p>
         </div>
 
-        <div className="space-y-16">
-          {services.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{category.category}</h3>
-                <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full"></div>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.services.map((service, serviceIndex) => (
-                  <Card
-                    key={serviceIndex}
-                    className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
-                  >
-                    <CardContent className="p-6 space-y-4">
-                      <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center`}>
-                        <service.icon className="h-6 w-6" />
-                      </div>
-
-                      <div className="space-y-2">
-                        <h4 className="text-lg font-semibold text-gray-900">{service.title}</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                      </div>
-
-                      <div className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-2">
-                            <div className="w-1 h-1 bg-blue-600 rounded-full"></div>
-                            <span className="text-xs text-gray-600">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="pt-4 border-t border-gray-100 space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Preço:</span>
-                          <span className="font-semibold text-blue-600 text-sm">{service.price}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Prazo:</span>
-                          <span className="font-semibold text-gray-900 text-sm">{service.duration}</span>
-                        </div>
-                      </div>
-
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm">
-                        Solicitar Orçamento
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
+              <Globe className="h-8 w-8 text-blue-600" />
             </div>
-          ))}
+            <h3 className="text-xl font-semibold text-gray-900">Desenvolvimento Web</h3>
+            <p className="text-gray-600">Sites institucionais, landing pages e sistemas web personalizados com tecnologia de ponta.</p>
+          </div>
+          
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto">
+              <ShoppingCart className="h-8 w-8 text-green-600" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900">E-commerce</h3>
+            <p className="text-gray-600">Lojas virtuais completas com integração WhatsApp, domínio próprio e zero comissões.</p>
+          </div>
+          
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto">
+              <Settings className="h-8 w-8 text-purple-600" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900">Sistemas Personalizados</h3>
+            <p className="text-gray-600">Sistemas sob medida para automatizar processos e otimizar a gestão do seu negócio.</p>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <Button 
+            size="lg" 
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8"
+            onClick={() => {
+              window.location.href = "/servicos";
+            }}
+          >
+            Ver Todos os Serviços
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </div>
     </section>
