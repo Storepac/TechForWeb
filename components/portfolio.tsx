@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Tech Loja - E-commerce",
     description: "Plataforma completa de e-commerce sem comissões para lojas virtuais profissionais.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354074/guarda-roupa-digital-em-tela-transparente_e06ycz.jpg",
     tags: ["React", "Next.js", "E-commerce", "WhatsApp"],
     link: "/servicos/tech-loja",
     github: "#",
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Sistema de Gestão",
     description: "Sistema web para gestão completa de empresa com dashboard e relatórios.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354075/gestao_facqll.jpg",
     tags: ["PHP", "MySQL", "Dashboard", "Relatórios"],
     link: "#",
     github: "#",
@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Site Institucional",
     description: "Site moderno e responsivo para empresa de consultoria empresarial.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354489/close-up-people-back-office_wxyuwg.jpg",
     tags: ["HTML", "CSS", "JavaScript", "Responsivo"],
     link: "#",
     github: "#",
@@ -34,7 +34,7 @@ const projects = [
   {
     title: "Landing Page",
     description: "Página de conversão otimizada para campanha de marketing digital.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354394/communication-social-media-icons-laptop-device_sqzebc.jpg",
     tags: ["Landing Page", "Conversão", "SEO", "Analytics"],
     link: "#",
     github: "#",
@@ -43,7 +43,7 @@ const projects = [
   {
     title: "App Mobile Web",
     description: "Aplicação web responsiva com funcionalidades mobile-first.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354075/app_mobile_azdhbc.jpg",
     tags: ["PWA", "Mobile", "Offline", "Push"],
     link: "#",
     github: "#",

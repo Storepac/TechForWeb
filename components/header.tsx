@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Code, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 interface HeaderProps {
   currentPage?: "home" | "techloja" | "politica" | "termos"
@@ -12,27 +12,27 @@ interface HeaderProps {
 export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const scrollToSection = (sectionId: string) => {
-    // Se estiver em qualquer página que não seja home, volta para home primeiro
-    if (currentPage !== "home" && sectionId !== "inicio") {
-      onNavigate?.("home")
-      // Aguarda um pouco para a página carregar antes de fazer scroll
+  // Se a página carregar com um hash (#sobre, #contato), rola suavemente
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "");
       setTimeout(() => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          })
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" })
         }
-      }, 100)
+      }, 300)
+    }
+  }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    if (currentPage !== "home") {
+      // Força redirecionamento para a home com hash
+      window.location.href = `/#${sectionId}`
     } else {
       const element = document.getElementById(sectionId)
       if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        })
+        element.scrollIntoView({ behavior: "smooth", block: "start" })
       }
     }
     setIsMenuOpen(false)
@@ -42,11 +42,22 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => onNavigate?.("home")}>
-            <img src="/perfil_circle.png" alt="Logo T4W" className="w-10 h-10 rounded-full object-cover bg-black" />
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => onNavigate?.("home")}
+          >
+            <img
+              src="/perfil_circle.png"
+              alt="Logo T4W"
+              className="w-10 h-10 rounded-full object-cover bg-black"
+            />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-800 leading-none font-poppins">TechFor</span>
-              <span className="text-sm text-blue-600 font-semibold leading-none font-poppins">Web</span>
+              <span className="text-xl font-bold text-gray-800 leading-none font-poppins">
+                TechFor
+              </span>
+              <span className="text-sm text-blue-600 font-semibold leading-none font-poppins">
+                Web
+              </span>
             </div>
           </div>
 
@@ -72,12 +83,12 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
             <button
               onClick={() => {
                 if (currentPage !== "home") {
-                  onNavigate?.("home");
+                  onNavigate?.("home")
                   setTimeout(() => {
-                    window.location.href = "/servicos";
-                  }, 100);
+                    window.location.href = "/servicos"
+                  }, 100)
                 } else {
-                  window.location.href = "/servicos";
+                  window.location.href = "/servicos"
                 }
               }}
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
@@ -87,12 +98,12 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
             <button
               onClick={() => {
                 if (currentPage !== "home") {
-                  onNavigate?.("home");
+                  onNavigate?.("home")
                   setTimeout(() => {
-                    window.location.href = "/projetos";
-                  }, 100);
+                    window.location.href = "/projetos"
+                  }, 100)
                 } else {
-                  window.location.href = "/projetos";
+                  window.location.href = "/projetos"
                 }
               }}
               className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
@@ -111,14 +122,23 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
             <Button
               className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-poppins font-medium"
               onClick={() => {
-                const message = "Olá TechForWeb! Gostaria de solicitar um orçamento gratuito."
+                const message =
+                  "Olá TechForWeb! Gostaria de solicitar um orçamento gratuito."
                 const encodedMessage = encodeURIComponent(message)
-                window.open(`https://wa.me/5514996145415?text=${encodedMessage}`, "_blank")
+                window.open(
+                  `https://wa.me/5514996145415?text=${encodedMessage}`,
+                  "_blank"
+                )
               }}
             >
               Orçamento Grátis
             </Button>
-            <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
@@ -149,14 +169,14 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               <button
                 onClick={() => {
                   if (currentPage !== "home") {
-                    onNavigate?.("home");
+                    onNavigate?.("home")
                     setTimeout(() => {
-                      window.location.href = "/servicos";
-                    }, 100);
+                      window.location.href = "/servicos"
+                    }, 100)
                   } else {
-                    window.location.href = "/servicos";
+                    window.location.href = "/servicos"
                   }
-                  setIsMenuOpen(false);
+                  setIsMenuOpen(false)
                 }}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
               >
@@ -165,14 +185,14 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               <button
                 onClick={() => {
                   if (currentPage !== "home") {
-                    onNavigate?.("home");
+                    onNavigate?.("home")
                     setTimeout(() => {
-                      window.location.href = "/projetos";
-                    }, 100);
+                      window.location.href = "/projetos"
+                    }, 100)
                   } else {
-                    window.location.href = "/projetos";
+                    window.location.href = "/projetos"
                   }
-                  setIsMenuOpen(false);
+                  setIsMenuOpen(false)
                 }}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
               >
@@ -187,9 +207,13 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               <Button
                 className="bg-blue-600 hover:bg-blue-700 text-white w-full font-poppins font-medium"
                 onClick={() => {
-                  const message = "Olá TechForWeb! Gostaria de solicitar um orçamento gratuito."
+                  const message =
+                    "Olá TechForWeb! Gostaria de solicitar um orçamento gratuito."
                   const encodedMessage = encodeURIComponent(message)
-                  window.open(`https://wa.me/5514996145415?text=${encodedMessage}`, "_blank")
+                  window.open(
+                    `https://wa.me/5514996145415?text=${encodedMessage}`,
+                    "_blank"
+                  )
                   setIsMenuOpen(false)
                 }}
               >
