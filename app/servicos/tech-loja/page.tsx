@@ -35,7 +35,7 @@ const features = [
   {
     icon: Globe,
     title: "Domínio Próprio",
-    description: "Domínio .com.br profissional incluso para dar credibilidade",
+    description: "Domínio .com.br (consultar disponibilidade) profissional incluso para dar credibilidade",
     color: "bg-indigo-100 text-indigo-600",
   },
   {
@@ -99,7 +99,7 @@ const plans = [
 
 const includedFeatures = [
   "E-commerce completo e profissional",
-  "Domínio próprio (.com.br) incluso",
+  "Domínio próprio (temporário) incluso",
   "1 administrador por loja",
   "Dashboard profissional TechForWeb",
   "Sistema de pedidos automatizado",
@@ -134,7 +134,7 @@ const steps = [
   {
     number: "4",
     title: "Comece a vender",
-    description: "Cadastre produtos e inicie suas vendas com sua loja profissional",
+    description: "Cadastre produtos e inicie suas vendas com sua loja profissional focada no Whatsapp",
     icon: "🚀",
   },
 ];
@@ -203,8 +203,8 @@ export default function TechLojaPage() {
               <div className="space-y-4">
                 {[
                   "E-commerce completo sem comissões",
-                  "Domínio próprio (.com.br) incluso",
-                  "WhatsApp Business integrado",
+                  "Vendas direto pelo Whatsapp",
+                  "Sistema de pedidos automatizado",
                 ].map((text) => (
                   <div key={text} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -266,7 +266,7 @@ export default function TechLojaPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Recursos profissionais para seu e-commerce</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Plataforma completa desenvolvida pela TechForWeb com todos os recursos necessários para criar uma loja
-              virtual de alto padrão e começar a vender online hoje mesmo.
+              virtual de alto padrão e começar a vender direto pelo Whatsapp hoje mesmo.
             </p>
           </div>
 

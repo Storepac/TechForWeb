@@ -52,7 +52,7 @@ const projects = [
   {
     title: "API REST",
     description: "API completa para integração entre sistemas e aplicações.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "https://res.cloudinary.com/lojaamk/image/upload/v1753354075/api_lmhdo2.jpg",
     tags: ["API", "REST", "Node.js", "MongoDB"],
     link: "#",
     github: "#",
