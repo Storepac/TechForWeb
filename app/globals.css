@@ -22,7 +22,7 @@
   .dark .text-gray-600 { color: hsl(var(--muted-foreground)); }
   .dark .text-gray-500 { color: hsl(var(--muted-foreground)); }
 
-  .dark .bg-white { background-color: hsl(var(--card)); }
+  /* Removido override global de bg-white no dark para permitir botões brancos dentro de cards/CTAs */
   .dark .bg-gray-50 { background-color: hsl(var(--muted)); }
   .dark .border-gray-100 { border-color: hsl(var(--border)); }
   .dark .border-gray-200 { border-color: hsl(var(--border)); }

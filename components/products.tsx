@@ -100,7 +100,7 @@ export function Products({ onShowTechLoja }: ProductsProps) {
           {products.map((product, index) => (
             <Card
               key={index}
-              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-visible ${
+              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-visible bg-white dark:bg-[#27272a] ${
                 product.popular ? "ring-2 ring-blue-500 scale-105 pt-8" : ""
               }`}
             >
