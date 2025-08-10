@@ -47,7 +47,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
   }
 
   return (
-    <header className="backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 text-gray-900 sticky top-0 z-50 border-b border-gray-100 dark:supports-[backdrop-filter]:bg-zinc-900/60 dark:bg-zinc-900/80 dark:text-card-foreground dark:border-border">
+    <header className="backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 text-gray-900 sticky top-0 z-50 border-gray-100 dark:supports-[backdrop-filter]:bg-zinc-900/60 dark:bg-zinc-900/80 dark:text-card-foreground dark:border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div
