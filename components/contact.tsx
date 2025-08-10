@@ -32,14 +32,14 @@ export function Contact() {
   }
 
   return (
-    <section id="contato" className="py-20 bg-gray-50">
+    <section id="contato" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             📞 Entre em Contato
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Vamos conversar sobre seu projeto</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Vamos conversar sobre seu projeto</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Estamos prontos para transformar suas ideias em realidade digital. Entre em contato e solicite seu orçamento
             gratuito.
           </p>
@@ -49,12 +49,12 @@ export function Contact() {
           {/* Contact Form */}
           <Card className="shadow-xl border-0">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Solicite seu orçamento</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Solicite seu orçamento</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Nome completo</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Nome completo</label>
                     <Input
                       type="text"
                       value={formData.name}
@@ -65,7 +65,7 @@ export function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">E-mail</label>
                     <Input
                       type="email"
                       value={formData.email}
@@ -79,7 +79,7 @@ export function Contact() {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Telefone</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Telefone</label>
                     <Input
                       type="tel"
                       value={formData.phone}
@@ -89,7 +89,7 @@ export function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">Assunto</label>
                     <Input
                       type="text"
                       value={formData.subject}
@@ -102,7 +102,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                  <label className="block text-sm font-medium text-foreground mb-2">Mensagem</label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -124,7 +124,7 @@ export function Contact() {
           <div className="space-y-8">
             <Card className="shadow-lg border-0">
               <CardContent className="p-8 space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900">Informações de contato</h3>
+                <h3 className="text-2xl font-bold text-foreground">Informações de contato</h3>
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
@@ -132,8 +132,8 @@ export function Contact() {
                       <Phone className="h-6 w-6 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Telefone</p>
-                      <p className="text-gray-600">(14) 99614-5415</p>
+                      <p className="font-semibold text-foreground">Telefone</p>
+                      <p className="text-muted-foreground">(14) 99614-5415</p>
                     </div>
                   </div>
 
@@ -142,8 +142,8 @@ export function Contact() {
                       <Mail className="h-6 w-6 text-green-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">E-mail</p>
-                      <p className="text-gray-600">contato@techforweb.com.br</p>
+                      <p className="font-semibold text-foreground">E-mail</p>
+                      <p className="text-muted-foreground">contato@techforweb.com.br</p>
                     </div>
                   </div>
 
@@ -152,8 +152,8 @@ export function Contact() {
                       <MapPin className="h-6 w-6 text-purple-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">Localização</p>
-                      <p className="text-gray-600">São Paulo, Brasil</p>
+                      <p className="font-semibold text-foreground">Localização</p>
+                      <p className="text-muted-foreground">São Paulo, Brasil</p>
                     </div>
                   </div>
                 </div>

@@ -84,14 +84,14 @@ const products = [
 
 export function Products({ onShowTechLoja }: ProductsProps) {
   return (
-    <section id="produtos" className="py-20 bg-gray-50">
+    <section id="produtos" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             🚀 Nossos Produtos
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Nossos campeões de vendas</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Nossos campeões de vendas</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Produtos mais solicitados desenvolvidos pela TechForWeb para acelerar sua transformação digital com tecnologia de ponta.
           </p>
         </div>
@@ -131,24 +131,24 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                 <p className="text-gray-600 leading-relaxed">{product.description}</p>
 
                 <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900">Principais recursos:</h4>
+                  <h4 className="font-semibold text-foreground">Principais recursos:</h4>
                   <div className="grid grid-cols-1 gap-2">
                     {product.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <span className="text-sm text-muted-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+                <div className="bg-muted rounded-lg p-4 space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Implementação:</span>
-                    <span className="font-bold text-gray-900">{product.pricing.setup}</span>
+                    <span className="text-muted-foreground">Implementação:</span>
+                    <span className="font-bold text-foreground">{product.pricing.setup}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Mensalidade:</span>
+                    <span className="text-muted-foreground">Mensalidade:</span>
                     <span className="font-bold text-blue-600">{product.pricing.monthly}</span>
                   </div>
                 </div>
@@ -195,9 +195,9 @@ export function Products({ onShowTechLoja }: ProductsProps) {
         </div>
 
         <div className="text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Precisa de algo personalizado?</h3>
-            <p className="text-gray-600 text-lg mb-6">
+          <div className="bg-card text-card-foreground rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">Precisa de algo personalizado?</h3>
+            <p className="text-muted-foreground text-lg mb-6">
               Desenvolvemos produtos sob medida para atender necessidades específicas do seu negócio.
             </p>
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">

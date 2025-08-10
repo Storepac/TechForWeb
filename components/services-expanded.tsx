@@ -149,14 +149,14 @@ const services = [
 
 export function ServicesExpanded() {
   return (
-    <section id="servicos" className="py-20 bg-white">
+    <section id="servicos" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             🛠️ Nossos Serviços
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Soluções digitais completas</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Soluções digitais completas</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Oferecemos uma gama completa de serviços de desenvolvimento web, desde sites institucionais até sistemas complexos, 
             sempre com foco na qualidade e resultados para seu negócio.
           </p>
@@ -167,24 +167,24 @@ export function ServicesExpanded() {
             <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto">
               <Globe className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900">Desenvolvimento Web</h3>
-            <p className="text-gray-600">Sites institucionais, landing pages e sistemas web personalizados com tecnologia de ponta.</p>
+            <h3 className="text-xl font-semibold text-foreground">Desenvolvimento Web</h3>
+            <p className="text-muted-foreground">Sites institucionais, landing pages e sistemas web personalizados com tecnologia de ponta.</p>
           </div>
           
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto">
               <ShoppingCart className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900">E-commerce</h3>
-            <p className="text-gray-600">Lojas virtuais completas com integração WhatsApp, domínio próprio e zero comissões.</p>
+            <h3 className="text-xl font-semibold text-foreground">E-commerce</h3>
+            <p className="text-muted-foreground">Lojas virtuais completas com integração WhatsApp, domínio próprio e zero comissões.</p>
           </div>
           
           <div className="text-center space-y-4">
             <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto">
               <Settings className="h-8 w-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900">Sistemas Personalizados</h3>
-            <p className="text-gray-600">Sistemas sob medida para automatizar processos e otimizar a gestão do seu negócio.</p>
+            <h3 className="text-xl font-semibold text-foreground">Sistemas Personalizados</h3>
+            <p className="text-muted-foreground">Sistemas sob medida para automatizar processos e otimizar a gestão do seu negócio.</p>
           </div>
         </div>
 

@@ -158,17 +158,17 @@ const categories = [
 
 export default function ProjetosPage() {
   return (
-    <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800 mb-4">
             💼 Nosso Portfólio
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Projetos Realizados
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Conheça alguns dos projetos desenvolvidos pela TechForWeb. Cada projeto é único e 
             desenvolvido com foco nos resultados e satisfação do cliente.
           </p>
@@ -194,7 +194,7 @@ export default function ProjetosPage() {
               key={index}
               className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
             >
-              <CardContent className="p-6 space-y-4">
+            <CardContent className="p-6 space-y-4">
                 {/* Header do Card */}
                 <div className="flex items-start justify-between">
                   <div className={`w-12 h-12 ${project.color} rounded-xl flex items-center justify-center`}>
@@ -215,8 +215,8 @@ export default function ProjetosPage() {
 
                 {/* Conteúdo */}
                 <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
                 </div>
 
                 {/* Tags */}
@@ -238,11 +238,11 @@ export default function ProjetosPage() {
                   {project.features.slice(0, 2).map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm text-gray-600">{feature}</span>
+                      <span className="text-sm text-muted-foreground">{feature}</span>
                     </div>
                   ))}
                   {project.features.length > 2 && (
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       +{project.features.length - 2} mais recursos
                     </div>
                   )}

@@ -1,7 +1,8 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Poppins } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,6 +12,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://techforweb.com.br"),
   title: "TechForWeb - Desenvolvimento Web Profissional | Sites, E-commerce e Sistemas",
   description:
     "Desenvolvimento de sites profissionais, lojas virtuais e sistemas web personalizados. Especialistas em React, Next.js e tecnologias modernas. Orçamento gratuito!",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
       "Desenvolvimento de sites profissionais, lojas virtuais e sistemas web personalizados. Especialistas em React, Next.js e tecnologias modernas.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/placeholder.jpg",
         width: 1200,
         height: 630,
         alt: "TechForWeb - Desenvolvimento Web Profissional",
@@ -62,22 +64,25 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TechForWeb - Desenvolvimento Web Profissional",
-    description: "Desenvolvimento de sites profissionais, lojas virtuais e sistemas web personalizados.",
-    images: ["/og-image.png"],
+    description:
+      "Desenvolvimento de sites profissionais, lojas virtuais e sistemas web personalizados.",
+    images: ["/placeholder.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-  manifest: "/manifest.json",
-  verification: {
-    google: "your-google-verification-code",
   },
   alternates: {
     canonical: "https://techforweb.com.br",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 }
 
 export default function RootLayout({
@@ -86,14 +91,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={poppins.variable}>
+    <html lang="pt-BR" className={poppins.variable} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#2563eb" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased min-h-screen bg-background text-foreground`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

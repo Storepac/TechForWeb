@@ -11,6 +11,17 @@ interface HeaderProps {
 
 export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('theme')
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      const shouldUseDark = stored ? stored === 'dark' : true // default dark
+      document.documentElement.classList.toggle('dark', shouldUseDark)
+      setIsDark(shouldUseDark)
+    } catch {}
+  }, [])
 
   // Se a página carregar com um hash (#sobre, #contato), rola suavemente
   useEffect(() => {
@@ -39,7 +50,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
   }
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <header className="bg-card text-card-foreground sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div
@@ -118,7 +129,21 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
             </button>
           </nav>
 
-          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4">
+            {/* Theme toggle */}
+            <button
+              aria-label="Alternar tema"
+              className="rounded-md border border-border px-2 py-1 text-sm hidden md:inline-flex bg-card text-card-foreground"
+              onClick={() => {
+                const html = document.documentElement
+                const nextIsDark = !html.classList.contains('dark')
+                html.classList.toggle('dark', nextIsDark)
+                setIsDark(nextIsDark)
+                try { localStorage.setItem('theme', nextIsDark ? 'dark' : 'light') } catch {}
+              }}
+            >
+              {isDark ? '🌙' : '☀️'}
+            </button>
             <Button
               className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-poppins font-medium"
               onClick={() => {
@@ -148,6 +173,19 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100">
             <nav className="flex flex-col space-y-4">
+              <button
+                aria-label="Alternar tema"
+                className="rounded-md border px-2 py-2 text-sm"
+                onClick={() => {
+                  const html = document.documentElement
+                  const nextIsDark = !html.classList.contains('dark')
+                  html.classList.toggle('dark', nextIsDark)
+                  setIsDark(nextIsDark)
+                  try { localStorage.setItem('theme', nextIsDark ? 'dark' : 'light') } catch {}
+                }}
+              >
+                {isDark ? 'Usar tema claro ☀️' : 'Usar tema escuro 🌙'}
+              </button>
               <button
                 onClick={() => scrollToSection("inicio")}
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"

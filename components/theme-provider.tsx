@@ -7,5 +7,10 @@ import {
 } from 'next-themes'
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  // Default dark, disable system preference to force dark by default
+  return (
+    <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      {children}
+    </NextThemesProvider>
+  )
 }
