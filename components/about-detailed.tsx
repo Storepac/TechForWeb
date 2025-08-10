@@ -39,14 +39,14 @@ const stats = [
 
 export function AboutDetailed() {
   return (
-    <section id="sobre" className="py-20 bg-background text-foreground">
+    <section id="sobre" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
             🏢 Sobre a TechForWeb
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Transformando ideias em soluções digitais</h2>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">Transformando ideias em soluções digitais</h2>
+          <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             A TechForWeb é uma empresa especializada em desenvolvimento web, focada em criar soluções digitais
             inovadoras que impulsionam o crescimento dos nossos clientes. Com anos de experiência no mercado, oferecemos
             serviços completos desde a concepção até a implementação de projetos web.
@@ -66,11 +66,11 @@ export function AboutDetailed() {
         </div>
 
         {/* Mission */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-16">
+        <div className="bg-white text-gray-900 rounded-2xl shadow-xl p-8 mb-16 dark:bg-card dark:text-card-foreground">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground">Nossa Missão</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground">Nossa Missão</h3>
+              <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">
                 Democratizar o acesso à tecnologia web de qualidade, oferecendo soluções personalizadas que atendem às
                 necessidades específicas de cada cliente. Acreditamos que toda empresa, independente do tamanho, merece
                 ter uma presença digital profissional e eficiente.
@@ -84,14 +84,14 @@ export function AboutDetailed() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-foreground">{item}</span>
+                    <span className="text-gray-900 dark:text-foreground">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-zinc-900 dark:to-zinc-800 rounded-xl p-8">
-              <h4 className="text-xl font-semibold text-foreground mb-4">Nossos Valores</h4>
-              <ul className="space-y-3 text-muted-foreground">
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-foreground mb-4">Nossos Valores</h4>
+              <ul className="space-y-3 text-gray-600 dark:text-muted-foreground">
                 <li>
                   • <strong>Inovação:</strong> Sempre buscando as melhores soluções
                 </li>
@@ -112,8 +112,8 @@ export function AboutDetailed() {
         {/* Services */}
         <div className="space-y-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Nossos Serviços</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-4">Nossos Serviços</h3>
+            <p className="text-gray-600 dark:text-muted-foreground max-w-2xl mx-auto">
               Oferecemos uma gama completa de serviços para atender todas as suas necessidades digitais
             </p>
           </div>
@@ -125,13 +125,13 @@ export function AboutDetailed() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                     <service.icon className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h4 className="text-xl font-semibold text-foreground">{service.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-foreground">{service.title}</h4>
+                  <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{service.description}</p>
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-gray-600 dark:text-muted-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>

@@ -54,7 +54,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="recursos" className="py-20 bg-background text-foreground">
+    <section id="recursos" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
@@ -77,17 +77,17 @@ export function Features() {
                 <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mx-auto`}>
                   <feature.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-foreground">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-card text-card-foreground rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Desenvolvido pela TechForWeb</h3>
-            <p className="text-muted-foreground text-lg">
+          <div className="bg-white text-gray-900 dark:bg-card dark:text-card-foreground rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-foreground mb-4">Desenvolvido pela TechForWeb</h3>
+            <p className="text-gray-600 dark:text-muted-foreground text-lg">
               Empresa especializada em desenvolvimento web com anos de experiência criando soluções digitais
               profissionais para empresas de todos os tamanhos.
             </p>

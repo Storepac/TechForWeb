@@ -62,7 +62,7 @@ const projects = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-20 bg-background text-foreground">
+    <section id="portfolio" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
@@ -94,8 +94,8 @@ export function Portfolio() {
 
               <CardContent className="p-6 space-y-4">
                 <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-foreground">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-muted-foreground text-sm leading-relaxed">{project.description}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">

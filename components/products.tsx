@@ -84,7 +84,7 @@ const products = [
 
 export function Products({ onShowTechLoja }: ProductsProps) {
   return (
-    <section id="produtos" className="py-20 bg-background text-foreground">
+    <section id="produtos" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
@@ -120,7 +120,7 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                       <product.icon className="h-8 w-8" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{product.name}</h3>
                       <Badge variant="secondary" className="text-xs mt-1">
                         {product.version}
                       </Badge>
@@ -132,23 +132,23 @@ export function Products({ onShowTechLoja }: ProductsProps) {
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-foreground">Principais recursos:</h4>
-                  <div className="grid grid-cols-1 gap-2">
+                   <div className="grid grid-cols-1 gap-2">
                     {product.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
+                        <span className="text-sm text-gray-600 dark:text-muted-foreground">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-muted rounded-lg p-4 space-y-2">
+                <div className="bg-gray-50 dark:bg-muted rounded-lg p-4 space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Implementação:</span>
-                    <span className="font-bold text-foreground">{product.pricing.setup}</span>
+                    <span className="text-gray-600 dark:text-muted-foreground">Implementação:</span>
+                    <span className="font-bold text-gray-900 dark:text-foreground">{product.pricing.setup}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground">Mensalidade:</span>
+                    <span className="text-gray-600 dark:text-muted-foreground">Mensalidade:</span>
                     <span className="font-bold text-blue-600">{product.pricing.monthly}</span>
                   </div>
                 </div>

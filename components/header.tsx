@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 interface HeaderProps {
-  currentPage?: "home" | "techloja" | "politica" | "termos"
-  onNavigate?: (page: "home" | "techloja" | "politica" | "termos") => void
+  currentPage?: "home" | "techloja" | "politica" | "termos" | "projetos" | "servicos"
+  onNavigate?: (page: "home" | "techloja" | "politica" | "termos" | "projetos" | "servicos") => void
 }
 
 export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
@@ -38,19 +38,16 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
 
   const scrollToSection = (sectionId: string) => {
     if (currentPage !== "home") {
-      // Força redirecionamento para a home com hash
       window.location.href = `/#${sectionId}`
-    } else {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
-      }
+      return
     }
+    const element = document.getElementById(sectionId)
+    if (element) element.scrollIntoView({ behavior: "smooth", block: "start" })
     setIsMenuOpen(false)
   }
 
   return (
-    <header className="bg-card text-card-foreground sticky top-0 z-50 border-b border-border">
+    <header className="backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 text-gray-900 sticky top-0 z-50 border-b border-gray-100 dark:supports-[backdrop-filter]:bg-zinc-900/60 dark:bg-zinc-900/80 dark:text-card-foreground dark:border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div
@@ -63,7 +60,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               className="w-10 h-10 rounded-full object-cover bg-black"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-800 leading-none font-poppins">
+              <span className="text-xl font-bold text-gray-800 dark:text-foreground leading-none font-poppins">
                 TechFor
               </span>
               <span className="text-sm text-blue-600 font-semibold leading-none font-poppins">
@@ -75,19 +72,19 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("inicio")}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Início
             </button>
             <button
               onClick={() => scrollToSection("sobre")}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("produtos")}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Produtos
             </button>
@@ -102,7 +99,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
                   window.location.href = "/servicos"
                 }
               }}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Serviços
             </button>
@@ -117,13 +114,13 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
                   window.location.href = "/projetos"
                 }
               }}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Portfólio
             </button>
             <button
               onClick={() => scrollToSection("contato")}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium font-poppins"
+              className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium font-poppins"
             >
               Contato
             </button>
@@ -133,7 +130,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
             {/* Theme toggle */}
             <button
               aria-label="Alternar tema"
-              className="rounded-md border border-border px-2 py-1 text-sm hidden md:inline-flex bg-card text-card-foreground"
+              className="rounded-md border border-gray-200 px-2 py-1 text-sm hidden md:inline-flex bg-white/80 text-gray-900 dark:border-border dark:bg-zinc-800/80 dark:text-card-foreground"
               onClick={() => {
                 const html = document.documentElement
                 const nextIsDark = !html.classList.contains('dark')
@@ -171,11 +168,11 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-t border-gray-100 dark:border-border bg-white/90 dark:bg-zinc-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-zinc-900/60">
             <nav className="flex flex-col space-y-4">
               <button
                 aria-label="Alternar tema"
-                className="rounded-md border px-2 py-2 text-sm"
+                className="rounded-md border px-2 py-2 text-sm border-gray-200 bg-white text-gray-900 dark:border-border dark:bg-card dark:text-card-foreground"
                 onClick={() => {
                   const html = document.documentElement
                   const nextIsDark = !html.classList.contains('dark')
@@ -188,19 +185,19 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
               </button>
               <button
                 onClick={() => scrollToSection("inicio")}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Início
               </button>
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection("produtos")}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Produtos
               </button>
@@ -216,7 +213,7 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
                   }
                   setIsMenuOpen(false)
                 }}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Serviços
               </button>
@@ -232,13 +229,13 @@ export function Header({ currentPage = "home", onNavigate }: HeaderProps) {
                   }
                   setIsMenuOpen(false)
                 }}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Portfólio
               </button>
               <button
                 onClick={() => scrollToSection("contato")}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left font-poppins"
+                className="text-gray-700 hover:text-blue-600 dark:text-foreground dark:hover:text-blue-400 transition-colors font-medium text-left font-poppins"
               >
                 Contato
               </button>

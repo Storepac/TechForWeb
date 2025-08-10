@@ -58,7 +58,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-poppins">
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-background dark:text-foreground font-poppins">
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
       {renderContent()}
       <Footer onNavigate={setCurrentPage} />

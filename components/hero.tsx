@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900 relative overflow-hidden"
+      className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-[#0b1020] dark:via-[#090e1b] dark:to-[#0b1020] relative overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute top-0 left-0 w-full h-full">
@@ -87,7 +87,7 @@ export function Hero() {
           </div>
 
           <div className="relative">
-            <div className="bg-card text-card-foreground rounded-2xl shadow-2xl p-6 border border-border">
+            <div className="bg-white text-gray-900 rounded-2xl shadow-2xl p-6 border border-gray-100 dark:bg-card dark:text-card-foreground dark:border-border">
               {/* Code editor mockup */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 pb-4 border-b border-gray-100">
