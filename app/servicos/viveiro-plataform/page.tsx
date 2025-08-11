@@ -116,11 +116,11 @@ const testimonials = [
 
 export default function ViveiroPlataformPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-background dark:text-foreground">
       {/* Back Button */}
       <div className="container mx-auto px-4 pt-6">
         <Link href="/servicos">
-          <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50">
+          <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:text-blue-400 dark:hover:text-blue-300 dark:hover:bg-blue-950">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar para Serviços
           </Button>
@@ -128,22 +128,22 @@ export default function ViveiroPlataformPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-background dark:via-background dark:to-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
+                <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded-full text-sm font-semibold text-blue-800 dark:text-blue-200">
                   💰 Sistema de Vendas Móveis
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-foreground leading-tight">
                   Venda de
                   <span className="block text-blue-600">Qualquer Lugar</span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-muted-foreground leading-relaxed">
                   Transforme suas viagens em oportunidades de venda! Acesse nosso catálogo, 
                   gere links de pagamento e receba comissões automáticas. 
                   <strong>Não perca mais nenhuma venda!</strong>
@@ -153,7 +153,7 @@ export default function ViveiroPlataformPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 dark:bg-blue-500 dark:hover:bg-blue-600"
                   onClick={() => {
                     const message = "Olá TechForWeb! Quero começar a vender com o sistema móvel e ganhar comissões. Como funciona?"
                     const encodedMessage = encodeURIComponent(message)
@@ -166,7 +166,7 @@ export default function ViveiroPlataformPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950"
                   onClick={() => {
                     const el = document.getElementById('como-funciona');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -176,12 +176,12 @@ export default function ViveiroPlataformPage() {
                 </Button>
               </div>
 
-              <div className="bg-gradient-to-r from-green-100 to-blue-100 rounded-xl p-6 border border-green-200">
+              <div className="bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900 dark:to-blue-900 rounded-xl p-6 border border-green-200 dark:border-green-800">
                 <div className="flex items-center space-x-3 mb-3">
-                  <Zap className="h-6 w-6 text-green-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">Ganhe até R$ 5.000/mês</h3>
+                  <Zap className="h-6 w-6 text-green-600 dark:text-green-400" />
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-foreground">Ganhe até R$ 5.000/mês</h3>
                 </div>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-muted-foreground">
                   Mudeiros ativos ganham em média <strong>R$ 2.500/mês</strong> em comissões. 
                   Comece hoje mesmo!
                 </p>
@@ -190,13 +190,13 @@ export default function ViveiroPlataformPage() {
 
             {/* RIGHT - Mockup */}
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+              <div className="bg-white dark:bg-card rounded-2xl shadow-2xl p-6 border border-gray-100 dark:border-border">
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-2 pb-4 border-b border-gray-100">
+                  <div className="flex items-center space-x-2 pb-4 border-b border-gray-100 dark:border-border">
                     <div className="w-3 h-3 bg-red-400 rounded-full" />
                     <div className="w-3 h-3 bg-yellow-400 rounded-full" />
                     <div className="w-3 h-3 bg-green-400 rounded-full" />
-                    <span className="ml-4 text-xs text-gray-600 font-mono">vendas-moveis.com</span>
+                    <span className="ml-4 text-xs text-gray-600 dark:text-muted-foreground font-mono">vendas-moveis.com</span>
                   </div>
 
                   <div className="space-y-3">
@@ -206,7 +206,7 @@ export default function ViveiroPlataformPage() {
 
                     <div className="grid grid-cols-2 gap-2">
                       {["Catálogo", "Vendas", "Comissões", "Relatórios"].map((item) => (
-                        <div key={item} className="bg-gray-100 rounded p-2 text-center text-xs">
+                        <div key={item} className="bg-gray-100 dark:bg-muted rounded p-2 text-center text-xs dark:text-foreground">
                           {item}
                         </div>
                       ))}
@@ -231,14 +231,14 @@ export default function ViveiroPlataformPage() {
       </section>
 
       {/* Como Funciona Section */}
-      <section id="como-funciona" className="py-20 bg-gray-50">
+      <section id="como-funciona" className="py-20 bg-gray-50 dark:bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded-full text-sm font-semibold text-blue-800 dark:text-blue-200">
               ⚡ Como Funciona
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">3 Passos Simples para Começar a Vender</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">3 Passos Simples para Começar a Vender</h2>
+            <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
               É muito simples! Você se cadastra, acessa o catálogo e começa a vender imediatamente.
             </p>
           </div>
@@ -248,8 +248,8 @@ export default function ViveiroPlataformPage() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
                 1
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Faça seu Cadastro</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-foreground">Faça seu Cadastro</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">
                 Cadastre-se gratuitamente e receba acesso ao catálogo completo de produtos
               </p>
             </div>
@@ -257,8 +257,8 @@ export default function ViveiroPlataformPage() {
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
                 2
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Venda e Gere Pagamento</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-foreground">Venda e Gere Pagamento</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">
                 Selecione produtos, defina quantidade e valor, gere link de pagamento
               </p>
             </div>
@@ -266,8 +266,8 @@ export default function ViveiroPlataformPage() {
               <div className="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto text-white text-2xl font-bold">
                 3
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">Receba sua Comissão</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-foreground">Receba sua Comissão</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">
                 Após o pagamento, receba sua comissão automaticamente na conta
               </p>
             </div>
@@ -276,14 +276,14 @@ export default function ViveiroPlataformPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full text-sm font-semibold text-green-800">
+            <div className="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900 rounded-full text-sm font-semibold text-green-800 dark:text-green-200">
               🚀 Recursos do Sistema
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Tudo que você precisa para vender mais</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">Tudo que você precisa para vender mais</h2>
+            <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
               Sistema completo desenvolvido para maximizar suas vendas e facilitar seu trabalho.
             </p>
           </div>
@@ -292,14 +292,14 @@ export default function ViveiroPlataformPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 bg-white dark:bg-[#27272a]"
               >
                 <CardContent className="p-6 text-center space-y-4">
                   <div className={`w-16 h-16 ${feature.color} rounded-xl flex items-center justify-center mx-auto`}>
                     <feature.icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-foreground">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -308,18 +308,18 @@ export default function ViveiroPlataformPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full text-sm font-semibold text-green-800">
+                <div className="inline-flex items-center  px-4 py-2 bg-green-100 dark:bg-green-900 rounded-full text-sm font-semibold text-green-800 dark:text-green-200">
                   💰 Vantagens Exclusivas
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">
                   Por que escolher nosso sistema?
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-muted-foreground leading-relaxed">
                   Diferencial único no mercado: você vende, nós enviamos, você recebe comissão. 
                   Simples assim!
                 </p>
@@ -329,29 +329,29 @@ export default function ViveiroPlataformPage() {
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
+                    <span className="text-gray-700 dark:text-foreground">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-green-100 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-green-100 dark:from-blue-900 dark:to-green-900 rounded-2xl p-8">
               <div className="text-center space-y-6">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-20 h-20 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center mx-auto">
                   <DollarSign className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Comissões Atraentes</h3>
-                <p className="text-gray-600">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Comissões Atraentes</h3>
+                <p className="text-gray-600 dark:text-gray-300">
                   Ganhe de 10% a 25% de comissão por venda, dependendo do produto e volume.
                 </p>
-                <div className="grid grid-cols-2 gap-4 text-center">
+                <div className="grid grid-cols-2 gap-4 text-center dark:text-foreground">
                   <div>
-                    <div className="text-2xl font-bold text-blue-600">R$ 2.500</div>
-                    <div className="text-sm text-gray-600">Média Mensal</div>
+                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-300">R$ 2.500</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">Média Mensal</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-blue-600">24h</div>
-                    <div className="text-sm text-gray-600">Para Receber</div>
+                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-300">24h</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">Para Receber</div>
                   </div>
                 </div>
               </div>
@@ -361,7 +361,7 @@ export default function ViveiroPlataformPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-yellow-100 rounded-full text-sm font-semibold text-yellow-800">

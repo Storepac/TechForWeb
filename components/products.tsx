@@ -13,6 +13,7 @@ import {
   Star,
   CheckCircle,
   Settings,
+  Globe,
 } from "lucide-react"
 
 interface ProductsProps {
@@ -41,6 +42,50 @@ const products = [
     color: "bg-blue-100 text-blue-600",
     gradient: "from-blue-500 to-blue-700",
     hasDetailPage: true,
+    isLarge: true,
+  },
+  {
+    name: "Contador de Espirros",
+    version: "v1.0",
+    description: "App divertido para contar espirros e acompanhar estatísticas pessoais de saúde.",
+    icon: BarChart3,
+    features: [
+      "Contador de espirros",
+      "Estatísticas diárias",
+      "Histórico completo",
+      "Interface intuitiva",
+      "Design responsivo",
+    ],
+    pricing: {
+      setup: "App gratuito",
+      monthly: "Sem custos",
+    },
+    link: "https://contador-de-espirros.lovable.app/",
+    popular: false,
+    color: "bg-purple-100 text-purple-600",
+    gradient: "from-purple-500 to-purple-700",
+    hasDetailPage: false,
+    isLarge: true,
+    isExternal: true,
+  },
+]
+
+const smallProducts = [
+  {
+    name: "Sites Institucionais",
+    version: "v2.0",
+    description: "Desenvolvimento completo de sites institucionais, landing pages, blogs e portais corporativos.",
+    icon: Catalog,
+    features: ["Sites institucionais", "Landing pages", "Blogs corporativos", "Design responsivo", "SEO otimizado"],
+    pricing: {
+      setup: "Sob consulta",
+      monthly: "Projeto personalizado",
+    },
+    link: "#",
+    popular: false,
+    color: "bg-orange-100 text-orange-600",
+    gradient: "from-orange-500 to-orange-700",
+    hasDetailPage: false,
   },
   {
     name: "Viveiro Platform",
@@ -65,19 +110,19 @@ const products = [
     hasDetailPage: true,
   },
   {
-    name: "Sites Institucionais",
+    name: "Landing Pages",
     version: "v2.0",
-    description: "Desenvolvimento completo de sites institucionais, landing pages, blogs e portais corporativos.",
-    icon: Catalog,
-    features: ["Sites institucionais", "Landing pages", "Blogs corporativos", "Design responsivo", "SEO otimizado"],
+    description: "Landing pages otimizadas para conversão com design moderno e alta performance.",
+    icon: Globe,
+    features: ["Design moderno", "Otimização conversão", "SEO avançado", "Analytics integrado", "Responsivo"],
     pricing: {
       setup: "Sob consulta",
       monthly: "Projeto personalizado",
     },
     link: "#",
     popular: false,
-    color: "bg-orange-100 text-orange-600",
-    gradient: "from-orange-500 to-orange-700",
+    color: "bg-cyan-100 text-cyan-600",
+    gradient: "from-cyan-500 to-cyan-700",
     hasDetailPage: false,
   },
 ]
@@ -96,6 +141,7 @@ export function Products({ onShowTechLoja }: ProductsProps) {
           </p>
         </div>
 
+        {/* Large Products - 2 cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-16 w-[95%] mx-auto">
           {products.map((product, index) => (
             <Card
@@ -154,11 +200,21 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                 </div>
 
                 <div className="flex space-x-3">
-                  {product.hasDetailPage ? (
+                  {product.isExternal ? (
                     <Button
                       className={`flex-1 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
                       onClick={() => {
-                        window.location.href = "/servicos/tech-loja"
+                        window.open(product.link, "_blank")
+                      }}
+                    >
+                      Acessar App
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  ) : product.hasDetailPage ? (
+                    <Button
+                      className={`flex-1 bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
+                      onClick={() => {
+                        window.location.href = product.link
                       }}
                     >
                       Ver Detalhes
@@ -189,6 +245,80 @@ export function Products({ onShowTechLoja }: ProductsProps) {
                     <MessageCircle className="w-4 h-4" />
                   </Button>
                 </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Small Products - 3 cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16 w-[95%] mx-auto">
+          {smallProducts.map((product, index) => (
+            <Card
+              key={index}
+              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-visible bg-white dark:bg-[#27272a]"
+            >
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className={`w-12 h-12 ${product.color} rounded-lg flex items-center justify-center`}>
+                    <product.icon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">{product.name}</h3>
+                    <Badge variant="secondary" className="text-xs">
+                      {product.version}
+                    </Badge>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 dark:text-muted-foreground text-sm leading-relaxed">{product.description}</p>
+
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-foreground text-sm">Recursos:</h4>
+                  <div className="grid grid-cols-1 gap-1">
+                    {product.features.slice(0, 3).map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                        <span className="text-xs text-gray-600 dark:text-muted-foreground">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 dark:bg-muted rounded-lg p-3 space-y-1 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-muted-foreground">Implementação:</span>
+                    <span className="font-bold text-gray-900 dark:text-foreground">{product.pricing.setup}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-muted-foreground">Mensalidade:</span>
+                    <span className="font-bold text-blue-600">{product.pricing.monthly}</span>
+                  </div>
+                </div>
+
+                                 <Button
+                   className={`w-full bg-gradient-to-r ${product.gradient} text-white hover:opacity-90`}
+                   onClick={() => {
+                     if (product.hasDetailPage) {
+                       window.location.href = product.link
+                     } else {
+                       const message = `Olá TechForWeb! Gostaria de mais informações sobre o ${product.name}.`
+                       const encodedMessage = encodeURIComponent(message)
+                       window.open(`https://wa.me/5514996145415?text=${encodedMessage}`, "_blank")
+                     }
+                   }}
+                 >
+                   {product.hasDetailPage ? (
+                     <>
+                       Ver Detalhes
+                       <ArrowRight className="w-4 h-4 ml-2" />
+                     </>
+                   ) : (
+                     <>
+                       Solicitar Orçamento
+                       <MessageCircle className="w-4 h-4 ml-2" />
+                     </>
+                   )}
+                 </Button>
               </CardContent>
             </Card>
           ))}

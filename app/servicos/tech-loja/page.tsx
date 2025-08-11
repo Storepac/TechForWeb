@@ -141,11 +141,11 @@ const steps = [
 
 export default function TechLojaPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-background dark:text-foreground">
       {/* Back Button */}
       <div className="container mx-auto px-4 pt-6">
         <Link href="/servicos">
-          <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50">
+          <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:text-blue-400 dark:hover:text-blue-300 dark:hover:bg-blue-950">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar para Serviços
           </Button>
@@ -153,23 +153,23 @@ export default function TechLojaPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-background dark:via-background dark:to-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
+                <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded-full text-sm font-semibold text-blue-800 dark:text-blue-200">
                   🚀 Loja Virtual Profissional
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-foreground leading-tight">
                   Crie sua
                   <span className="block text-blue-600">Loja Virtual</span>
                   <span className="block">sem comissões</span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-muted-foreground leading-relaxed">
                   Plataforma completa de e-commerce desenvolvida pela TechForWeb. Tenha sua loja profissional com domínio
                   próprio, WhatsApp integrado e zero taxas sobre vendas.
                 </p>
@@ -178,7 +178,7 @@ export default function TechLojaPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 dark:bg-blue-500 dark:hover:bg-blue-600"
                   onClick={() => {
                     const el = document.getElementById('planos');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -190,7 +190,7 @@ export default function TechLojaPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950"
                   onClick={() => {
                     const el = document.getElementById('como-funciona');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -205,24 +205,24 @@ export default function TechLojaPage() {
                   "E-commerce completo sem comissões",
                   "Vendas direto pelo Whatsapp",
                   "Sistema de pedidos automatizado",
-                ].map((text) => (
-                  <div key={text} className="flex items-center space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{text}</span>
-                  </div>
-                ))}
+                                 ].map((text) => (
+                   <div key={text} className="flex items-center space-x-3">
+                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                     <span className="text-gray-700 dark:text-foreground">{text}</span>
+                   </div>
+                 ))}
               </div>
             </div>
 
             {/* RIGHT - Mockup */}
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+              <div className="bg-white dark:bg-card rounded-2xl shadow-2xl p-6 border border-gray-100 dark:border-border">
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-2 pb-4 border-b border-gray-100">
+                  <div className="flex items-center space-x-2 pb-4 border-b border-gray-100 dark:border-border">
                     <div className="w-3 h-3 bg-red-400 rounded-full" />
                     <div className="w-3 h-3 bg-yellow-400 rounded-full" />
                     <div className="w-3 h-3 bg-green-400 rounded-full" />
-                    <span className="ml-4 text-xs text-gray-600 font-mono">minhaloja.com.br</span>
+                    <span className="ml-4 text-xs text-gray-600 dark:text-muted-foreground font-mono">minhaloja.com.br</span>
                   </div>
 
                   <div className="space-y-3">
@@ -232,7 +232,7 @@ export default function TechLojaPage() {
 
                     <div className="grid grid-cols-2 gap-2">
                       {["Produto 1", "Produto 2", "Produto 3", "Produto 4"].map((p) => (
-                        <div key={p} className="bg-gray-100 rounded p-2 text-center text-xs">
+                        <div key={p} className="bg-gray-100 dark:bg-muted rounded p-2 text-center text-xs dark:text-foreground">
                           {p}
                         </div>
                       ))}
@@ -257,14 +257,14 @@ export default function TechLojaPage() {
       </section>
 
       {/* Features Section */}
-      <section id="recursos" className="py-20 bg-gray-50">
+      <section id="recursos" className="py-20 bg-gray-50 dark:bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-6 mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded-full text-sm font-semibold text-blue-800 dark:text-blue-200">
               ⚡ Tecnologia TechForWeb
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Recursos profissionais para seu e-commerce</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">Recursos profissionais para seu e-commerce</h2>
+            <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
               Plataforma completa desenvolvida pela TechForWeb com todos os recursos necessários para criar uma loja
               virtual de alto padrão e começar a vender direto pelo Whatsapp hoje mesmo.
             </p>
@@ -290,7 +290,7 @@ export default function TechLojaPage() {
       </section>
 
       {/* Plans Section */}
-      <section id="planos" className="py-20 bg-white">
+      <section id="planos" className="py-20 bg-white dark:bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-6 mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-red-100 rounded-full text-sm font-semibold text-red-800">
