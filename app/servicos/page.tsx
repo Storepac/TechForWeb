@@ -9,37 +9,37 @@ import Link from "next/link";
 
 const services = [
   {
-    name: "Tech Loja",
-    description: "Plataforma completa de e-commerce sem comissões para criar lojas virtuais profissionais.",
+    name: "Catálogo (Tech Loja)",
+    description: "Crie sua loja online e venda pelo WhatsApp. Plataforma completa para criar sua loja virtual com checkout integrado ao WhatsApp.",
     icon: ShoppingCart,
     features: [
       "E-commerce completo",
       "WhatsApp integrado", 
-      "Domínio próprio incluso",
-      "Zero comissões",
-      "Dashboard profissional"
+      "Checkout integrado",
+      "Sem taxas por venda",
+      "Fácil de usar"
     ],
     pricing: "A partir de R$ 39,90/mês",
-    link: "/servicos/tech-loja",
+    link: "https://catalogo.techforweb.com.br/",
     status: "disponivel",
     color: "bg-blue-100 text-blue-600",
     gradient: "from-blue-500 to-blue-700",
     category: "E-commerce"
   },
   {
-    name: "Viveiro Platform",
-    description: "Sistema completo para administração de viveiros, controle de estoque, vendas e relatórios.",
+    name: "Agendei",
+    description: "Sistema completo de agendamentos para gerenciar clientes, horários e cobranças de forma simples e eficiente.",
     icon: Settings,
     features: [
-      "Gestão de produtos e categorias",
-      "Controle de vendas e relatórios", 
-      "Dashboard intuitivo",
-      "Design responsivo",
-      "Desenvolvido por TechForWeb"
+      "Agendamentos fáceis e rápidos",
+      "Gestão de clientes", 
+      "Sistema de cobranças",
+      "Interface intuitiva",
+      "Plataforma completa"
     ],
-    pricing: "Sob consulta",
-    link: "/servicos/viveiro-plataform",
-    status: "em-desenvolvimento",
+    pricing: "Acesse o sistema",
+    link: "https://agendei.techforweb.com.br/",
+    status: "disponivel",
     color: "bg-green-100 text-green-600",
     gradient: "from-green-500 to-green-700",
     category: "Sistema"
@@ -197,17 +197,17 @@ const categories = [
 
 export default function ServicosPage() {
   return (
-    <main className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-white dark:bg-background py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800 mb-4">
+        <div className="text-center mb-12 space-y-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-foreground">
             🛠️ Nossos Serviços
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Soluções Digitais Completas
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+            Soluções Digitais Completas
+          </p>
+          <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
             Oferecemos uma gama completa de serviços de desenvolvimento web e transformação digital 
             para impulsionar seu negócio com tecnologia de ponta.
           </p>
@@ -219,7 +219,7 @@ export default function ServicosPage() {
             <Button
               key={category.value}
               variant="outline"
-              className="rounded-full border-gray-300 text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700"
+              className="rounded-full border-gray-300 dark:border-border text-gray-700 dark:text-foreground hover:bg-blue-50 dark:hover:bg-blue-950 hover:border-blue-300 dark:hover:border-blue-700 hover:text-blue-700 dark:hover:text-blue-300"
             >
               {category.name}
             </Button>
@@ -231,17 +231,17 @@ export default function ServicosPage() {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
+              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-1 bg-white dark:bg-card"
             >
               <CardContent className="p-6 space-y-4">
                 {/* Header do Card */}
                 <div className="flex items-start justify-between">
-                  <div className={`w-12 h-12 ${service.color} rounded-xl flex items-center justify-center`}>
+                  <div className={`w-12 h-12 ${service.color} dark:opacity-80 rounded-xl flex items-center justify-center`}>
                     <service.icon className="h-6 w-6" />
                   </div>
                   <Badge 
                     variant={service.status === "em-desenvolvimento" ? "secondary" : "default"}
-                    className={service.status === "em-desenvolvimento" ? "bg-yellow-100 text-yellow-800" : "bg-green-100 text-green-800"}
+                    className={service.status === "em-desenvolvimento" ? "bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200" : "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200"}
                   >
                     {service.status === "em-desenvolvimento" ? "Em Desenvolvimento" : "Disponível"}
                   </Badge>
@@ -249,40 +249,52 @@ export default function ServicosPage() {
 
                 {/* Conteúdo */}
                 <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-gray-900">{service.name}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-foreground">{service.name}</h3>
+                  <p className="text-gray-600 dark:text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                 </div>
 
                 {/* Features */}
                 <div className="space-y-2">
                   {service.features.slice(0, 3).map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm text-gray-600">{feature}</span>
+                      <div className="w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
+                      <span className="text-sm text-gray-600 dark:text-muted-foreground">{feature}</span>
                     </div>
                   ))}
                   {service.features.length > 3 && (
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500 dark:text-muted-foreground">
                       +{service.features.length - 3} mais recursos
                     </div>
                   )}
                 </div>
 
                 {/* Preço */}
-                <div className="pt-3 border-t border-gray-100">
-                  <p className="text-lg font-semibold text-blue-600 mb-3">{service.pricing}</p>
+                <div className="pt-3 border-t border-gray-100 dark:border-border">
+                  <p className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">{service.pricing}</p>
                   
                   <div className="flex space-x-2">
                     {service.link !== "#" ? (
-                      <Link href={service.link} className="flex-1">
-                        <Button className={`w-full bg-gradient-to-r ${service.gradient} text-white hover:opacity-90`}>
-                          Ver Detalhes
+                      service.link.startsWith("http") ? (
+                        <Button 
+                          className={`flex-1 bg-gradient-to-r ${service.gradient} text-white hover:opacity-90 dark:hover:opacity-80`}
+                          onClick={() => {
+                            window.open(service.link, "_blank")
+                          }}
+                        >
+                          Acessar Sistema
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>
-                      </Link>
+                      ) : (
+                        <Link href={service.link} className="flex-1">
+                          <Button className={`w-full bg-gradient-to-r ${service.gradient} text-white hover:opacity-90 dark:hover:opacity-80`}>
+                            Ver Detalhes
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </Button>
+                        </Link>
+                      )
                     ) : (
                       <Button 
-                        className={`flex-1 bg-gradient-to-r ${service.gradient} text-white hover:opacity-90`}
+                        className={`flex-1 bg-gradient-to-r ${service.gradient} text-white hover:opacity-90 dark:hover:opacity-80`}
                         onClick={() => {
                           const message = `Olá TechForWeb! Gostaria de mais informações sobre ${service.name}.`
                           const encodedMessage = encodeURIComponent(message)
@@ -301,16 +313,16 @@ export default function ServicosPage() {
         </div>
 
         {/* CTA Final */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-800 rounded-2xl p-8 text-center text-white">
           <h3 className="text-2xl font-bold mb-4">Precisa de algo personalizado?</h3>
-          <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
+          <p className="text-blue-100 dark:text-blue-200 text-lg mb-6 max-w-2xl mx-auto">
             Desenvolvemos soluções sob medida para atender necessidades específicas do seu negócio. 
             Nossa equipe está pronta para transformar suas ideias em realidade.
           </p>
           <Button 
             size="lg" 
             variant="secondary"
-            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold"
+            className="bg-white dark:bg-gray-100 text-blue-600 dark:text-blue-700 hover:bg-gray-100 dark:hover:bg-gray-200 font-semibold"
             onClick={() => {
               const message = "Olá TechForWeb! Gostaria de solicitar um orçamento para um projeto personalizado."
               const encodedMessage = encodeURIComponent(message)

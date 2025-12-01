@@ -6,13 +6,13 @@ import { Badge } from "@/components/ui/badge"
 import {
   ShoppingCart,
   LibraryIcon as Catalog,
-  Store,
   BarChart3,
   MessageCircle,
   ArrowRight,
   Star,
   CheckCircle,
-  Settings,
+  Calendar,
+  MapPin,
   Globe,
 } from "lucide-react"
 
@@ -22,39 +22,92 @@ interface ProductsProps {
 
 const products = [
   {
-    name: "Tech Loja",
-    version: "v2.0",
-    description: "Plataforma completa de e-commerce sem comissões para criar lojas virtuais profissionais.",
-    icon: ShoppingCart,
+    name: "Agendei",
+    version: "v1.0",
+    description:
+      "Sistema de agendamentos fáceis e rápidos. Gerencie horários, clientes e cobranças em uma única plataforma.",
+    icon: Calendar,
     features: [
-      "E-commerce completo",
-      "WhatsApp integrado",
-      "Domínio próprio incluso",
-      "Zero comissões",
-      "Dashboard profissional",
+      "Agenda online intuitiva",
+      "Gestão de clientes",
+      "Lembretes automáticos",
+      "Cobrança integrada",
+      "Painel com visão do dia",
     ],
     pricing: {
-      setup: "Ver na página",
-      monthly: "Confira os planos",
+      setup: "Plano sob medida",
+      monthly: "Consulte condições",
     },
-    link: "/servicos/tech-loja",
-    popular: true,
-    color: "bg-blue-100 text-blue-600",
-    gradient: "from-blue-500 to-blue-700",
-    hasDetailPage: true,
+    link: "https://agendei.techforweb.com.br/",
+    popular: false,
+    color: "bg-emerald-100 text-emerald-700",
+    gradient: "from-emerald-500 to-emerald-700",
+    hasDetailPage: false,
     isLarge: true,
+    isExternal: true,
+  },
+  {
+    name: "XixiMaps",
+    version: "v1.0",
+    description:
+      "Mapa colaborativo de banheiros públicos limpos e seguros, pensado especialmente para mulheres.",
+    icon: MapPin,
+    features: [
+      "Mapa interativo",
+      "Avaliação de segurança e higiene",
+      "Filtros por tipo de local",
+      "Interface simples e acessível",
+      "Foco em segurança para mulheres",
+    ],
+    pricing: {
+      setup: "Uso gratuito",
+      monthly: "Modelo a definir",
+    },
+    link: "https://xiximaps.techforweb.com.br/landing",
+    popular: true,
+    color: "bg-blue-100 text-blue-700",
+    gradient: "from-blue-500 to-blue-700",
+    hasDetailPage: false,
+    isLarge: true,
+    isExternal: true,
+  },
+  {
+    name: "Catálogo Tech Loja",
+    version: "v2.0",
+    description:
+      "Crie sua loja online e venda pelo WhatsApp com checkout simplificado e foco em conversão.",
+    icon: ShoppingCart,
+    features: [
+      "Catálogo completo de produtos",
+      "Checkout via WhatsApp",
+      "Layout otimizado para mobile",
+      "Gestão simples do conteúdo",
+      "Pronto para rodar em poucos dias",
+    ],
+    pricing: {
+      setup: "Plano sob medida",
+      monthly: "Consulte condições",
+    },
+    link: "https://catalogo.techforweb.com.br/",
+    popular: false,
+    color: "bg-pink-100 text-pink-700",
+    gradient: "from-pink-500 to-pink-700",
+    hasDetailPage: false,
+    isLarge: true,
+    isExternal: true,
   },
   {
     name: "Contador de Espirros",
     version: "v1.0",
-    description: "App divertido para contar espirros e acompanhar estatísticas pessoais de saúde.",
+    description:
+      "App gratuito para monitorar sua saúde respiratória, registrando espirros e identificando padrões.",
     icon: BarChart3,
     features: [
-      "Contador de espirros",
-      "Estatísticas diárias",
-      "Histórico completo",
-      "Interface intuitiva",
-      "Design responsivo",
+      "Registro rápido de espirros",
+      "Gráficos e estatísticas",
+      "Funcionamento offline",
+      "Dados salvos no dispositivo",
+      "Totalmente gratuito",
     ],
     pricing: {
       setup: "App gratuito",
@@ -62,7 +115,7 @@ const products = [
     },
     link: "https://contador-de-espirros.lovable.app/",
     popular: false,
-    color: "bg-purple-100 text-purple-600",
+    color: "bg-purple-100 text-purple-700",
     gradient: "from-purple-500 to-purple-700",
     hasDetailPage: false,
     isLarge: true,
@@ -88,28 +141,6 @@ const smallProducts = [
     hasDetailPage: false,
   },
   {
-    name: "Viveiro Platform",
-    version: "v1.0",
-    description: "Sistema completo para administração de viveiros, controle de estoque, vendas e relatórios.",
-    icon: Settings,
-    features: [
-      "Gestão de produtos",
-      "Controle de estoque",
-      "Relatórios avançados",
-      "Dashboard intuitivo",
-      "Design responsivo",
-    ],
-    pricing: {
-      setup: "Sob consulta",
-      monthly: "Projeto personalizado",
-    },
-    link: "/servicos/viveiro-plataform",
-    popular: false,
-    color: "bg-green-100 text-green-600",
-    gradient: "from-green-500 to-green-700",
-    hasDetailPage: true,
-  },
-  {
     name: "Landing Pages",
     version: "v2.0",
     description: "Landing pages otimizadas para conversão com design moderno e alta performance.",
@@ -131,11 +162,11 @@ export function Products({ onShowTechLoja }: ProductsProps) {
   return (
     <section id="produtos" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-            🚀 Nossos Produtos
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Nossos campeões de vendas</h2>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">🚀 Nossos Produtos</h2>
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+            Nossos campeões de vendas
+          </p>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Produtos mais solicitados desenvolvidos pela TechForWeb para acelerar sua transformação digital com tecnologia de ponta.
           </p>

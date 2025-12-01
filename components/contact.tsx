@@ -34,11 +34,11 @@ export function Contact() {
   return (
     <section id="contato" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-            📞 Entre em Contato
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">Vamos conversar sobre seu projeto</h2>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">📞 Entre em Contato</h2>
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-muted-foreground">
+            Vamos conversar sobre seu projeto
+          </p>
           <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
             Estamos prontos para transformar suas ideias em realidade digital. Entre em contato e solicite seu orçamento
             gratuito.

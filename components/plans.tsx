@@ -63,11 +63,11 @@ export function Plans() {
   return (
     <section id="planos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-            💼 Planos TechForWeb
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Escolha o plano ideal para seu negócio</h2>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">💼 Planos TechForWeb</h2>
+          <p className="text-sm uppercase tracking-[0.2em] text-gray-500">
+            Escolha o plano ideal para seu negócio
+          </p>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Planos mensais flexíveis sem fidelidade. Desenvolvido pela TechForWeb com suporte especializado e tecnologia
             de ponta.

@@ -151,11 +151,11 @@ export function ServicesExpanded() {
   return (
     <section id="servicos" className="py-20 bg-white text-gray-900 dark:bg-background dark:text-foreground">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-            🛠️ Nossos Serviços
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Soluções digitais completas</h2>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">🛠️ Nossos Serviços</h2>
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+            Soluções digitais completas
+          </p>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Oferecemos uma gama completa de serviços de desenvolvimento web, desde sites institucionais até sistemas complexos, 
             sempre com foco na qualidade e resultados para seu negócio.

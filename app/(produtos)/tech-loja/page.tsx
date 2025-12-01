@@ -257,7 +257,7 @@ export default function TechLojaPage() {
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-foreground">⚡ Tecnologia TechForWeb</h2>
-            <p className="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-muted-foreground">
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
               Recursos profissionais para seu e-commerce
             </p>
             <p className="text-xl text-gray-600 dark:text-muted-foreground max-w-3xl mx-auto">
@@ -462,4 +462,5 @@ export default function TechLojaPage() {
       </section>
     </main>
   );
-} 
+}
+

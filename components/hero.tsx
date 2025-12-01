@@ -17,13 +17,9 @@ export function Hero() {
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-                🚀 Empresa de Desenvolvimento Web
-              </div>
-
+            <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Desenvolvimento
+                🚀 Desenvolvimento
                 <span className="block text-blue-600">Web Profissional</span>
               </h1>
 

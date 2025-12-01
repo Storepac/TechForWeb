@@ -26,13 +26,9 @@ export function Referral() {
                     <Gift className="h-10 w-10 text-blue-600" />
                   </div>
 
-                  <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-blue-800">
-                    💡 Programa Exclusivo TechForWeb
-                  </div>
-
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    Programa de Indicação
-                    <span className="block text-blue-600">Tech Loja</span>
+                    💡 Programa Exclusivo TechForWeb
+                    <span className="block text-blue-600">Programa de Indicação Tech Loja</span>
                   </h2>
 
                   <p className="text-xl text-gray-600 leading-relaxed">
